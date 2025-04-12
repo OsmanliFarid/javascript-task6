@@ -106,8 +106,8 @@ AtmInputSubmit.addEventListener("click",(e) =>{
                            deposit
                        </button>
                    </div></div>`
-                   AtmMoneyfunctionBoxs.innerHTML = ""
                    arrNew2()
+                   
                    
                    })
        })    
