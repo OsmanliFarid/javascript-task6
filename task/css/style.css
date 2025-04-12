@@ -1,0 +1,83 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+body{
+    background-color: rgb(148, 146, 146);
+}
+.mobile-box{
+    width: 365px;
+    height: 700px;
+    background: url(../images/programming-iphone-developer-text-u8ue4o2u7btu8gwb.jpg)center no-repeat;
+    background-size: cover;
+    border-radius: 30px;
+    border: 1px solid black;
+    box-shadow: 10px 30px 30px rgba(0,0,0,100);
+}
+.mobile-box2{
+    width: 365px;
+    height: 700px;
+    border-radius: 30px;
+    border: 1px solid black;
+    box-shadow: 10px 30px 30px rgba(0,0,0,100);
+    background-color: #fff;
+}
+.mobile-boxs{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.bank-img{
+    width: 50px;
+    border-radius: 50%;
+    margin: 100px 0px 0px 30px;
+    cursor: pointer;
+}
+.mobile-box > .login-form-boxs{
+    display: none;
+}
+.mobile-box2, .login-form-boxs{
+    display: block;
+}
+.login-form-boxs > form{
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+form{
+    padding: 240px 0px;
+}
+input{
+    margin-top: 20px;
+    width: 200px;
+    height: 40px;
+    border-radius: 30px;
+    padding: 10px;
+}
+.AtmInputButton{
+    margin-top: 20px;
+    height: 30px;
+    border-radius: 30px;
+}
+
+.AtmFunctionBoxs2{
+    margin: 300px 0px 0px 80px;
+}
+.deposit-box{
+    margin-top: 10px;
+    width: 300px;
+}
+.AtmFunctionBoxs-button2{
+    width: 210px;
+    height: 40px;
+    border-radius: 30px;
+}
+.AtmFunctionBoxs-button1{
+    width: 210px;
+    height: 40px;
+    border-radius: 30px;
+}
