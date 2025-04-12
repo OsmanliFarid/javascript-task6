@@ -81,9 +81,9 @@ AtmInputSubmit.addEventListener("click",(e) =>{
                    
                    MoneyExitButton.addEventListener("click",() =>{
                        let mesaj = e.balance - Number(AtmMoneyBalanceExit.value)
-                       e.balance = mesaj
-                       if(e.balance >= 0){
-                           
+                       
+                       if(mesaj >= 0){
+                        e.balance = mesaj
                            
                        AtmMoneyBalance.innerText = mesaj
                        
@@ -107,7 +107,7 @@ AtmInputSubmit.addEventListener("click",(e) =>{
                        </button>
                    </div></div>`
                    arrNew2()
-                   
+                   AtmMoneyfunctionBoxs.innerHTML = ""
                    
                    })
        })    
