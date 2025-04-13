@@ -99,6 +99,12 @@ form{
 .AtmMoneyTitle,.AtmMoneyTitle2,.AtmMoneytitle3{
     font-size: 24px;
 }
+.DepositBalanceTitle,.DepositBalanceTitle2{
+    font-size: 24px;
+}
+.depositFunctionBox,.depositFunctionBox2{
+    margin-top: 15px;
+}
 .AtmMoneyBalance{
     width: 100px;
     background-color: #464545;
@@ -126,9 +132,25 @@ form{
     padding-top: 5px;
     margin-left: 20px;
 }
+.depositNewBalance,.DepositBalance{
+    width: 100px;
+    background-color: #464545;
+    color: #fff;
+    padding-left: 70px;
+    height: 30px;
+    padding-top: 5px;
+    margin-left: 20px;
+}
 .MoneyImg{
     width: 30px;
     margin-left: 320px;
     margin-top: 30px;
     cursor: pointer;
+}
+.depositFunctionBox,.depositFunctionBox2{
+    display: flex;
+    align-items: center;
+}
+.DepositFunctionButton{
+    margin-top: 280px;
 }
