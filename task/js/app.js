@@ -21,7 +21,7 @@ const AtmInputNumber = document.querySelector("#AtmInputNumber")
 const AtmInputPin = document.querySelector("#AtmInputPin")
 const AtmInputSubmit = document.querySelector("#AtmInputSubmit")
 const AtmFunctionBoxs = document.querySelector("#AtmFunctionBoxs")
-let arrNew2 = []
+
 
 AtmInputSubmit.addEventListener("click",(e) =>{
     
@@ -35,19 +35,59 @@ AtmInputSubmit.addEventListener("click",(e) =>{
         let arrBox2 = arrBox.filter((e)=>{
             if(e.Number16 === Number(AtmNumber8) && e.pin === Number(AtmNumberPin4)){
                loginFormBoxs.remove()
-               AtmFunctionBoxs.innerHTML = `<div class="AtmFunctionBoxs2">
+               const arrBox4 = () =>{
+                AtmFunctionBoxs.innerHTML = `<div class="AtmFunctionBoxs2">
                <div class="money-box">
-                       <button class="AtmFunctionBoxs-button1" id="AtmFunctionBoxsId">money</button>
+                       <button class="AtmFunctionBoxs-button1 AtmFunctionBoxsId" id="">money</button>
                    </div>
                    <div class="deposit-box">
-                       <button class="AtmFunctionBoxs-button2">
+                       <button class="AtmFunctionBoxs-button2 AtmFunctionBoxs3" id="">
                            deposit
                        </button>
                    </div></div>`
-                   const AtmFunctionBoxsId = document.querySelector("#AtmFunctionBoxsId")
+               }
+               arrBox4()
+                   const AtmFunctionBoxsId = document.querySelector(".AtmFunctionBoxsId")
+                   const AtmFunctionBoxs3 = document.querySelector(".AtmFunctionBoxs3")
+                   const DepositFunctionBoxs = document.querySelector("#DepositFunctionBoxs")
+
+                    AtmFunctionBoxs3.addEventListener('click',() =>{
+                        AtmFunctionBoxs.innerHTML = ""
+                        DepositFunctionBoxs.innerHTML = `<img src="./images/exit-svgrepo-com.svg" alt="" class="MoneyImg">
+                        <button class="DepositFunctionButton" id="DepositFunctionButton">Deposit</button>
+                    <div class="depositFunctionBox">
+                        <h1 class="DepositBalanceTitle">Balance:</h1>
+                    <div class="DepositBalance" id="DepositBalance"></div>
+                    </div>
+                    <div class="depositFunctionBox2">
+                        <h1 class="DepositBalanceTitle2">Deposit meblegi:</h1>
+                    <input type="text" class="depositNewBalance" id="DepositNewBalance">
+                    </div>`
+                    const DepositBalance = document.querySelector("#DepositBalance")
+                    const DepositNewBalance = document.querySelector("#DepositNewBalance")
+                    const DepositFunctionButton = document.querySelector("#DepositFunctionButton")
+                    const DepositBalanceTitle = document.querySelector('.DepositBalanceTitle')
+                    DepositBalance.innerText = e.balance
+                    DepositFunctionButton.addEventListener('click',() =>{
+                        DepositBalance.innerText = Number(DepositNewBalance.value) + e.balance
+                        e.balance = Number(DepositBalance.innerText)
+                        DepositBalanceTitle.innerText = "Yeni balans:"
+                        DepositNewBalance.value = ""
+                        
+                    })
+                    const MoneyImg2 = document.querySelector(".MoneyImg")
+                        MoneyImg2.addEventListener("click",() =>{
+                            arrBox4()
+                            DepositFunctionBoxs.innerHTML = ""
+                            arrNew2()
+                        })
+                        
+    
+                       })
+                   
        AtmFunctionBoxsId.addEventListener('click',() =>{
            AtmFunctionBoxs.innerHTML = ""
-           AtmMoneyfunctionBoxs.innerHTML = `<img src="./images/exit-svgrepo-com.svg" alt="" class="MoneyImg" id="MoneyImg">
+           AtmMoneyfunctionBoxs.innerHTML = `<img src="./images/exit-svgrepo-com.svg" alt="" class="MoneyImg">
            <div class="AtmMoneyBox">
            <button class="AtmFunctionBoxs-button3" id="MoneyExitButton">
                            meblegi cixart
@@ -75,7 +115,7 @@ AtmInputSubmit.addEventListener("click",(e) =>{
                    
                    AtmMoneyBalance.innerText = e.balance
                    const AtmMoneyTitle = document.querySelector("#AtmMoneyTitle")
-                   const MoneyImg = document.querySelector("#MoneyImg")
+                   const MoneyImg = document.querySelector(".MoneyImg")
                
                    
                    
@@ -97,20 +137,21 @@ AtmInputSubmit.addEventListener("click",(e) =>{
                        
                    })
                    MoneyImg.addEventListener('click',() =>{
-                       AtmMoneyfunctionBoxs.innerHTML = `<div class="AtmFunctionBoxs2">
-               <div class="money-box">
-                       <button class="AtmFunctionBoxs-button1" id="AtmFunctionBoxsId">money</button>
-                   </div>
-                   <div class="deposit-box">
-                       <button class="AtmFunctionBoxs-button2">
-                           deposit
-                       </button>
-                   </div></div>`
-                   arrNew2()
+                       arrBox4()
+                   
+                   
+                   
+                   
                    AtmMoneyfunctionBoxs.innerHTML = ""
+                   arrNew2()
+                   
                    
                    })
+                
+                 
        })    
+    
+    
             }
              
            
